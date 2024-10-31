@@ -25,7 +25,7 @@ import 'package:food/screens/splash_screen.dart';
 import 'package:food/screens/track_order.dart';
 import 'package:food/screens/update_profile_screen.dart';
 import 'package:food/screens/users_screen.dart';
-// import 'package:provider/provider.dart';
+import 'package:provider/provider.dart';
 
 // void main() {
 //   runApp(const MyApp());
@@ -33,16 +33,16 @@ import 'package:food/screens/users_screen.dart';
 
 
 
-// void main() {
-//   runApp(
-//     MultiProvider(
-//       providers: [
-//         ChangeNotifierProvider(create: (_) => FoodCartProvider()),
-//       ],
-//       child: MyApp(),
-//     ),
-//   );
-// }
+void main() {
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => FoodCartProvider()),
+      ],
+      child: MyApp(),
+    ),
+  );
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -79,7 +79,7 @@ class MyApp extends StatelessWidget {
         '/restaurantScreen': (context) => RestaurantScreen(
               id: 0,
             ),
-        // '/oderSummary': (context) => OrderSummaryScreen(),
+        '/oderSummary': (context) => OrderSummaryScreen(),
       },
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',

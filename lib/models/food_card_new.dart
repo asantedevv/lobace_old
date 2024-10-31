@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart';
 import 'package:http/http.dart' as http;
 
-class FoodCard extends StatelessWidget {
+class FoodCardNew extends StatelessWidget {
   final int id;
   final String name;
   final String image; // Base64 encoded image`
   final String price;
   final int? quantity;
 
-  FoodCard(
+  FoodCardNew(
       {required this.name,
       required this.image,
       required this.id,
@@ -58,12 +58,23 @@ class FoodCard extends StatelessWidget {
             onPressed: () {
               getFoodById(id, context);
             },
-            child: Text(
-              name,
-              style: TextStyle(
-                  fontSize: 17,
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold),
+            child: Column(
+              children: [
+                Text(
+                  name,
+                  style: TextStyle(
+                      fontSize: 17,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold),
+                ),
+                Text(
+                  quantity.toString(),
+                  style: TextStyle(
+                      fontSize: 17,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold),
+                ),
+              ],
             ),
           ),
         ),

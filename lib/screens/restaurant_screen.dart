@@ -4,7 +4,7 @@ import 'package:food/models/food.dart';
 import 'package:food/models/food_card.dart';
 import 'package:food/models/food_cart_provider.dart';
 import 'package:http/http.dart' as http;
-// import 'package:provider/provider.dart';
+import 'package:provider/provider.dart';
 
 class RestaurantScreen extends StatefulWidget {
   final int id;
@@ -194,35 +194,37 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
                           price: food.price,
                           name: food.name,
                           image: food.image,
+                          quantity: food.id,
                         ),
-                        // Row(
-                        //   mainAxisAlignment: MainAxisAlignment.center,
-                        //   children: [
-                        //     IconButton(
-                        //       onPressed: () {
-                        //         context
-                        //             .read<FoodCartProvider>()
-                        //             .decrementFoodCount(food.id);
-                        //       },
-                        //       icon: Icon(Icons.remove),
-                        //     ),
-                        //     Text(
-                        //       '${context.watch<FoodCartProvider>().foodCounts[food.id] ?? 0}',
-                        //       style: TextStyle(
-                        //           fontSize: 16, fontWeight: FontWeight.bold),
-                        //     ),
-                        //     IconButton(
-                        //       onPressed: () {
-                        //         context
-                        //             .read<FoodCartProvider>()
-                        //             .incrementFoodCount(food.id);
-                        //       },
-                        //       icon: Icon(Icons.add),
-                        //     ),
-                        //   ],
-                        // ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            IconButton(
+                              onPressed: () {
+                                context
+                                    .read<FoodCartProvider>()
+                                    .decrementFoodCount(food.id);
+                              },
+                              icon: Icon(Icons.remove),
+                            ),
+                            Text(
+                              '${context.watch<FoodCartProvider>().foodCounts[food.id] ?? 0}',
+                              style: TextStyle(
+                                  fontSize: 16, fontWeight: FontWeight.bold),
+                            ),
+                            IconButton(
+                              onPressed: () {
+                                context
+                                    .read<FoodCartProvider>()
+                                    .incrementFoodCount(food.id);
+                              },
+                              icon: Icon(Icons.add),
+                            ),
+                          ],
+                        ),
                       ],
                     );
+                  
                   },
                 ),
               ),

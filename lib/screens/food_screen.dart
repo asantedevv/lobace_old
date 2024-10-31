@@ -291,6 +291,7 @@ class _FoodScreenState extends State<FoodScreen> {
                       name: foods[index].name,
                       image: foods[index].image,
                       price: foods[index].price,
+                      quantity: foods[index].id,
                     );
                   },
                 ),

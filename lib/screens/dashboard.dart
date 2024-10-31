@@ -218,6 +218,25 @@ class _DashboardState extends State<Dashboard> {
                   bottom: BorderSide(color: Colors.grey, width: 0.2)),
               title: Row(
                 children: [
+                  Image.asset("assets/images/Group.png"), // Group 26.png
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  const Text(
+                    'Orders',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                ],
+              ),
+              onTap: () {
+                Navigator.pushNamed(context, '/oderSummary');
+              },
+            ),
+            ListTile(
+              shape: const Border(
+                  bottom: BorderSide(color: Colors.grey, width: 0.2)),
+              title: Row(
+                children: [
                   Image.asset("assets/images/call-calling.png"),
                   const SizedBox(
                     width: 10,
